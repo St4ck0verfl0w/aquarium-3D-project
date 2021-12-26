@@ -1,3 +1,26 @@
+# Aquarium 3D project
+
+This project is part of an assignement in the course 'INF443 - Informatique Graphique 3D'. Everything required for compilation is already there.
+
+## Introduction
+
+The main idea of this project was to model a seabed in which a user would be able to move using the keyboard and the mouse, just like a first-person game.
+
+In order to get a realistic representation of the sea, where the player would not be always outside of the intended bounds, the main idea was to create an infinite ground, where the user could evolve without any limit.
+The next objective was to reproduces physical phenomena that can be found in the sea floor, like the specific lighning that can be observed underwater, the fadding horizon, water effects, as well as gravity and friction loss.
+
+Also, the objective of this project was to implement boids, and different animals, in order to make the scene more alive.
+
+At last, the scene contains sereval textures and billboards to decorate the scene.
+
+The whole project was coded using as much properties of object-oriented programming as possible, making the implementation and execution slower, but a code much more resilient and easy to use.
+
+
+
+Followed is documention about VCL, 
+
+
+
 # VCL
 
 - [Introduction](#Introduction)
