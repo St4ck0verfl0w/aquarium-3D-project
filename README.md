@@ -1,6 +1,6 @@
 # Aquarium 3D project
 
-This project is part of an assignement in the course 'INF443 - Informatique Graphique 3D'.
+This project is part of an assignment in the course 'INF443 - Informatique Graphique 3D'.
 
 Everything required for compilation is already there.
 
@@ -8,36 +8,36 @@ Everything required for compilation is already there.
 
 The main idea of this project was to model a seabed in which a user would be able to move using the keyboard and the mouse, just like a first-person game.
 
-In order to get a realistic representation of the sea, where the player would not be always outside of the intended bounds, the main idea was to create an infinite ground, where the user could evolve without any limit.
-The next objective was to reproduces physical phenomena that can be found in the sea floor, like the specific lighning that can be observed underwater, the fadding horizon, water effects, as well as gravity and friction loss.
+In order to get a realistic representation of the sea, where the player would not be always outside the intended bounds, my objective was to create an infinite ground, where the user could evolve without any limit.
+The next objective was to reproduce physical phenomena that can be found underwater, like the specific lightning that can be observed, the fading horizon, water effects, as well as gravity and friction loss.
 
 Also, the objective of this project was to implement boids, and different animals, in order to make the scene more alive.
 
-At last, the scene contains sereval textures and billboards to decorate the scene.
+At last, the scene contains several textures and billboards to decorate the scene.
 
-The whole project was coded using as much properties of object-oriented programming as possible, making the implementation and execution slower, but a code much more resilient and easy to use.
+The whole project was coded using as many properties of object-oriented programming as possible, making the implementation and execution slower, but a code much more resilient and easier to use.
 
 
 ## Creating an infinite world
 
 First, I created a 'Chunk', a finite world generated using perlin noise with some texture. The exact representation is detailed in the file Chunk.cpp, and a chunk needs a scaling vector as an argument.
-This scaling vector will scale the chunk in any direction by any factor, but with only be used for symmetry. Thanks to symmetrical properties, consecutive occurence of the same chunk can be continuous if some of them are mirrored along the correct axis.
+This scaling vector will scale the chunk in any direction by any factor, but with only be used for symmetry. Thanks to symmetrical properties, consecutive occurrence of the same chunk can be continuous if some of them are mirrored along the correct axis.
 
 With this technique, we can have a central chunk without symmetry, surrounded by chunks with symmetry along the axis x or y, and so on, creating a 4*4 grid of mirrored chunks. The file Terrain.cpp contains all the information regarding this grid.
 
 | X-MIRROR | NO-MIRROR | X-MIRROR | NO-MIRROR |
 | --- | --- | --- | --- | 
-| XY-MIRROR| Y-MIRROR  | XY-MIRROR | Y-MIRROR |
+| XY-MIRROR| Y-MIRROR | XY-MIRROR | Y-MIRROR |
 | X-MIRROR | NO-MIRROR | X-MIRROR | NO-MIRROR |
 | XY-MIRROR | Y-MIRROR | XY-MIRROR | Y-MIRROR |
 
 
-Such grid is periodic, and it is possible to move a line of this grid in the game in order to ensure that the player is always at the center of it. From their point of view, it will always be possible to move in any direction, without limit, and 16 blocks around him will constantly be displayed. The transition always happens far away and with some fog, the user cannot see the end of the map.
+Such grid is periodic, and it is possible to move the farthest chunks from the players in order to ensure that they are always at the center of the grid. From their point of view, it will always be possible to move in any direction, without limit, and 16 blocks around them will constantly be displayed. The transition always happens far away and with some fog, the users cannot see the end of the map.
 
-At last, once the keyboard is detected and implemented, it become quite easy it make sure that the player is never underground (by ensuring z_player >= f(x,y)) where Z=f(X,Y) is the equation of the chunk, with X=x%L and Y=y%L where L is the size of a chunk.
+At last, once the keyboard is detected and implemented, we have to make sure that the players are never underground (by ensuring f(x,y)<= z) where Z=f(X,Y) is the equation of the chunk, with X=x%L and Y=y%L where L is the size of a chunk.
 
 
-Followed is documention about VCL, 
+Followed is documentation about VCL,
 
 
 
