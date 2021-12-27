@@ -5,7 +5,7 @@ This project is part of an assignment in the course 'INF443 - Informatique Graph
 Everything required for compilation is already there.
 
 
-![Overview](https://github.com/St4ck0verfl0w/aquarium-3D-project/tree/main/imgs/overview.png "Overview")
+<p align="center"><img width="50%" src="https://github.com/St4ck0verfl0w/aquarium-3D-project/tree/main/imgs/overview.png" /></p>
 
 
 ## Introduction
