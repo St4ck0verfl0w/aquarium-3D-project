@@ -4,6 +4,10 @@ This project is part of an assignment in the course 'INF443 - Informatique Graph
 
 Everything required for compilation is already there.
 
+
+![Overview](https://github.com/St4ck0verfl0w/aquarium-3D-project/tree/main/imgs/overview.png "Overview")
+
+
 ## Introduction
 
 The main idea of this project was to model a seabed in which a user would be able to move using the keyboard and the mouse, just like a first-person game.
@@ -25,11 +29,11 @@ This scaling vector will scale the chunk in any direction by any factor, but wit
 
 With this technique, we can have a central chunk without symmetry, surrounded by chunks with symmetry along the axis x or y, and so on, creating a 4*4 grid of mirrored chunks. The file Terrain.cpp contains all the information regarding this grid.
 
-| X-MIRROR | NO-MIRROR | X-MIRROR | NO-MIRROR |
-| --- | --- | --- | --- | 
-| XY-MIRROR| Y-MIRROR | XY-MIRROR | Y-MIRROR |
-| X-MIRROR | NO-MIRROR | X-MIRROR | NO-MIRROR |
-| XY-MIRROR | Y-MIRROR | XY-MIRROR | Y-MIRROR |
+| X-MIRROR  | NO-MIRROR | X-MIRROR  | NO-MIRROR |
+|-----------|-----------|-----------|-----------|
+| XY-MIRROR | Y-MIRROR  | XY-MIRROR | Y-MIRROR  |
+| X-MIRROR  | NO-MIRROR | X-MIRROR  | NO-MIRROR |
+| XY-MIRROR | Y-MIRROR  | XY-MIRROR | Y-MIRROR  |
 
 
 Such grid is periodic, and it is possible to move the farthest chunks from the players in order to ensure that they are always at the center of the grid. From their point of view, it will always be possible to move in any direction, without limit, and 16 blocks around them will constantly be displayed. The transition always happens far away and with some fog, the users cannot see the end of the map.
